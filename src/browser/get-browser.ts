@@ -1,4 +1,4 @@
-import { access } from 'fs/promises';
+import { access } from 'node:fs/promises';
 import { launch, Browser } from 'puppeteer-core';
 import { getChromeConfig } from './chrome-config';
 
@@ -33,9 +33,9 @@ export const getBrowser = async (): Promise<Browser> => {
 
     finalBrowser = browser;
     return finalBrowser;
-  } catch (err) {
+  } catch (err: any) {
     throw new Error(
-      `failed to load chrome [ ${executablePath} ]. error=${err.message}`,
+      `failed to load chrome [ ${executablePath} ]. error=${err?.message}`,
     );
   }
 };

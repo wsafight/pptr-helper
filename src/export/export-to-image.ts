@@ -1,5 +1,4 @@
-import { ScreenshotOptions } from 'puppeteer-core';
-import { DEFAULT_USER_AGENT } from '../constants';
+import { type ScreenshotOptions } from 'puppeteer-core';
 import { BasicActionArgs, checkBasicActionArgs, getChromePage } from '@/basic';
 
 export interface ExportToImageArgs extends BasicActionArgs {
@@ -13,7 +12,7 @@ export const exportToImage = async ({
   url = '',
   savePath = '',
   type = 'png',
-  userAgent = DEFAULT_USER_AGENT,
+  userAgent,
   screenshotOptions,
   viewport,
   pageFunction,
@@ -30,6 +29,5 @@ export const exportToImage = async ({
   };
 
   await page.screenshot(imgOptions);
-
   await page.close();
 };
