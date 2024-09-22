@@ -347,3 +347,5 @@ const main = async () => {
 // 执行文件
 main();
 ```
+
+大家可以自行学习 [Puppeteer 文档](https://pptr.dev/)
