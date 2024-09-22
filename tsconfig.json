@@ -7,5 +7,5 @@
     },
     "isolatedModules": true
   },
-  "include": ["src"]
+  "include": ["src", "example/index.mjs"]
 }
