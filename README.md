@@ -1,17 +1,18 @@
-# tool-library-template
+# puppeteer-helper
 
 <!-- [![NPM Version](https://badgen.net/npm/v/tool-library-template)](https://www.npmjs.com/package/tool-library-template) -->
 
 Read this in other languages:
-[English](https://github.com/wsafight/tool-library-template/blob/main/README.EN.md)
+[English](https://github.com/wsafight/puppeteer-helper/blob/main/README.EN.md)
 
-工具库模板
+puppeteer 辅助库
+
 
 ## 特性
 
-- [x] 基于 modern.js
+- [x] 基于 puppeteer-core 进行浏览器处理
 
-## 安装
+<!-- ## 安装
 
 ```bash
 npm install tool-library-template
@@ -39,9 +40,4 @@ yarn add tool-library-template
 ```
 
 ## Changelog
-
-- 0.0.3 添加 np 替代 npm publish
-
-- 0.0.2 切换框架为 modern.js
-
-- 0.0.1 基本可用
+ -->

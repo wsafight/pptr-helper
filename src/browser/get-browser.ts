@@ -1,6 +1,6 @@
 import { access } from 'node:fs/promises';
 import { launch, Browser } from 'puppeteer-core';
-import { getChromeConfig } from './chrome-config';
+import { getChromeConfig } from './config';
 
 /** singleton */
 let finalBrowser: Browser;

@@ -22,7 +22,10 @@ export const configureChromeConfig = ({
   launchArgs = getChromelaunchArgs(),
 } = DEFAULT_CONFIG) => {
   /**  A browser location that actually works  */
-  invariant(!executablePath, 'executablePath of chrome cannot be empty');
+  invariant(
+    typeof executablePath !== 'string' || !executablePath,
+    'executablePath of chrome cannot be empty',
+  );
 
   finalConfig = {
     executablePath,

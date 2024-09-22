@@ -1,4 +1,4 @@
-export { configureChromeConfig } from './browser/chrome-config';
+export { configureChromeConfig } from './browser/config';
 export {
   exportToImage,
   exportToPdf,
