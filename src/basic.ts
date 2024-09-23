@@ -30,7 +30,7 @@ export const checkBasicActionArgs = ({ url, savePath }: BasicActionArgs) => {
   );
 };
 
-export const getChromePage = async ({
+export const getBrowserPage = async ({
   url,
   userAgent,
   viewport,

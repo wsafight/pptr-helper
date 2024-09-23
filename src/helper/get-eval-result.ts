@@ -1,5 +1,5 @@
 import { type Page } from 'puppeteer-core';
-import { BasicActionArgs, getChromePage } from '../basic';
+import { BasicActionArgs, getBrowserPage } from '../basic';
 import { invariant } from '@/utils';
 
 export type GetEvalResultFromPage = Omit<BasicActionArgs, 'savePath'> & {
@@ -18,7 +18,7 @@ export const getEvalResult = async ({
     'url must be a string and cannot be empty',
   );
 
-  const page = await getChromePage({ url, userAgent, viewport, pageFunction });
+  const page = await getBrowserPage({ url, userAgent, viewport, pageFunction });
   const result = await evalFunction(page);
   await page.close();
   return result;

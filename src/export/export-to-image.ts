@@ -1,5 +1,5 @@
 import { type ScreenshotOptions } from 'puppeteer-core';
-import { BasicActionArgs, checkBasicActionArgs, getChromePage } from '@/basic';
+import { BasicActionArgs, checkBasicActionArgs, getBrowserPage } from '@/basic';
 
 export interface ExportToImageArgs extends BasicActionArgs {
   /** Image type, default png */
@@ -19,7 +19,7 @@ export const exportToImage = async ({
 }: ExportToImageArgs): Promise<void> => {
   checkBasicActionArgs({ url, savePath });
 
-  const page = await getChromePage({ url, userAgent, viewport, pageFunction });
+  const page = await getBrowserPage({ url, userAgent, viewport, pageFunction });
 
   const imgOptions = {
     type,

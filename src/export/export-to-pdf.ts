@@ -1,5 +1,5 @@
 import { type PDFOptions } from 'puppeteer-core';
-import { BasicActionArgs, checkBasicActionArgs, getChromePage } from '@/basic';
+import { BasicActionArgs, checkBasicActionArgs, getBrowserPage } from '@/basic';
 
 export interface ExportToPdfArgs extends BasicActionArgs {
   pdfOptions?: PDFOptions;
@@ -15,7 +15,7 @@ export const exportToPdf = async ({
 }: ExportToPdfArgs) => {
   checkBasicActionArgs({ url, savePath });
 
-  const page = await getChromePage({ url, userAgent, viewport, pageFunction });
+  const page = await getBrowserPage({ url, userAgent, viewport, pageFunction });
 
   const finalPdfOptions = {
     path: savePath,

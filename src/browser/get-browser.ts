@@ -1,6 +1,6 @@
 import { access } from 'node:fs/promises';
 import { launch, Browser } from 'puppeteer-core';
-import { getChromeConfig } from './config';
+import { getBrowserConfig } from './config';
 
 /** singleton */
 let finalBrowser: Browser;
@@ -11,7 +11,7 @@ export const getBrowser = async (): Promise<Browser> => {
     return finalBrowser;
   }
 
-  const { executablePath, headless, launchArgs } = getChromeConfig();
+  const { executablePath, headless, launchArgs } = getBrowserConfig();
 
   // Check whether the browser path is correct
   try {

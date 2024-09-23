@@ -1,25 +1,25 @@
-import { getChromelaunchArgs } from '../constants';
+import { getBrowserlaunchArgs } from '../constants';
 import { invariant } from '../utils';
 
-interface ChromeConfig {
+interface BrowserConfig {
   executablePath: string;
   headless?: boolean;
   launchArgs?: string[];
 }
 
 /** singleton */
-let finalConfig: ChromeConfig;
+let finalConfig: BrowserConfig;
 
-const DEFAULT_CONFIG: ChromeConfig = {
+const DEFAULT_CONFIG: BrowserConfig = {
   executablePath: '',
   headless: true,
-  launchArgs: getChromelaunchArgs(),
+  launchArgs: getBrowserlaunchArgs(),
 };
 
-export const configureChromeConfig = ({
+export const configureBrowserConfig = ({
   executablePath,
   headless = true,
-  launchArgs = getChromelaunchArgs(),
+  launchArgs = getBrowserlaunchArgs(),
 } = DEFAULT_CONFIG) => {
   /**  A browser location that actually works  */
   invariant(
@@ -35,4 +35,4 @@ export const configureChromeConfig = ({
   Object.freeze(finalConfig);
 };
 
-export const getChromeConfig = () => finalConfig;
+export const getBrowserConfig = () => finalConfig;
